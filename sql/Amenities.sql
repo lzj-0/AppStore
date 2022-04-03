@@ -8,7 +8,7 @@ create table Amenities (
 	air_conditioning VARCHAR(3) NOT NULL CHECK (air_conditioning IN ('Yes', 'No')),
 	TV VARCHAR(3) NOT NULL CHECK (TV IN ('Yes', 'No')),
 	washing_machine VARCHAR(3) NOT NULL CHECK (washing_machine IN ('Yes', 'No')),
-	FOREIGN KEY ID REFERENCES Catalog(ID_place)
+	FOREIGN KEY (ID) REFERENCES Catalog(ID_place)
 );
 insert into Amenities (ID, kitchen, parking, wifi, smoking_allowed, pets_allowed, air_conditioning, TV, washing_machine) values ('0001', 'Yes', 'No', 'No', 'Yes', 'No', 'No', 'No', 'Yes');
 insert into Amenities (ID, kitchen, parking, wifi, smoking_allowed, pets_allowed, air_conditioning, TV, washing_machine) values ('0002', 'Yes', 'Yes', 'No', 'Yes', 'Yes', 'No', 'Yes', 'No');
