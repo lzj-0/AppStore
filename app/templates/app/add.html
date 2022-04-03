@@ -16,7 +16,11 @@
         Country<span class="asteriskField">*</span> </label> <select id="country" name="country">
     <script src="assets/js/geodatasource-cr.min.js"></script>
     <link rel="gettext" type="application/x-po" href="languages/en/LC_MESSAGES/en.po" />
-    <script type="text/javascript" src="assets/js/Gettext.js"></script> <br>
+    <script type="text/javascript" src="assets/js/Gettext.js"></script> <div>
+        Country: <select class="gds-cr" country-data-region-id="gds-cr-one" data-language="en"></select>
+
+        Region: <select id="gds-cr-one"></select>
+    </div><br>
         City<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="id" maxlength="16" class="textinput textInput" required="" id="id_id"> </div> </div> <div id="div_id_neighborhood" class="control-group"> <label for="id_neighborhood" class="control-label requiredField">
         Price<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="price" maxlength="16" class="textinput textInput" required="" id="id_price"> </div> </div> 
         Type<span class="asteriskField">*</span> </label> <select name="type" id="type" required>
