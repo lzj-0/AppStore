@@ -1,12 +1,12 @@
 create table Account (
-	ID INT,
-	name VARCHAR(50),
-	email VARCHAR(50),
-	gender VARCHAR(50),
-	country VARCHAR(50),
-	date of birth DATE,
-	number VARCHAR(50),
-	is_host VARCHAR(50)
+	ID INT PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	email VARCHAR(50) UNIQUE NOT NULL,
+	gender VARCHAR(50) NOT NULL,
+	country VARCHAR(50) NOT NULL,
+	date_of_birth DATE NOT NULL CHECK (date_of_birth BETWEEN 01/01/1920 AND 01/01/2004,
+	number VARCHAR(50) NOT NULL,
+	is_host VARCHAR(50) NOT NULL
 );
 insert into Account (ID, name, email, gender, country, date of birth, number, is_host) values (1, 'Sibelle Gunner', 'sgunner0@naver.com', 'Female', 'Madagascar', '25/01/1940', '3418918809', true);
 insert into Account (ID, name, email, gender, country, date of birth, number, is_host) values (2, 'Noble Harrington', 'nharrington1@cbslocal.com', 'Male', 'China', '19/09/1990', '9848537288', true);
