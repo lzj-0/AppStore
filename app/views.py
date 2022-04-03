@@ -5,18 +5,18 @@ from django.db import connection
 def index(request):
     """Shows the main page"""
 
-    ## Delete customer
+    ## Delete listing
     if request.POST:
         if request.POST['action'] == 'delete':
             with connection.cursor() as cursor:
-                cursor.execute("DELETE FROM customers WHERE customerid = %s", [request.POST['id']])
+                cursor.execute("DELETE FROM Catalog WHERE ID_account = %s", [request.POST['ID_account']])
 
     ## Use raw query to get all objects
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM customers ORDER BY customerid")
-        customers = cursor.fetchall()
+        cursor.execute("SELECT * FROM Catalog ORDER BY ID_account")
+        listings = cursor.fetchall()
 
-    result_dict = {'records': customers}
+    result_dict = {'records': listings}
 
     return render(request,'app/index.html',result_dict)
 
@@ -24,11 +24,11 @@ def index(request):
 def view(request, id):
     """Shows the main page"""
     
-    ## Use raw query to get a customer
+    ## Use raw query to get a listing
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM customers WHERE customerid = %s", [id])
-        customer = cursor.fetchone()
-    result_dict = {'cust': customer}
+        cursor.execute("SELECT * FROM Catalog WHERE ID_account = %s", [id])
+        listing = cursor.fetchone()
+    result_dict = {'cust': listing}
 
     return render(request,'app/view.html',result_dict)
 
@@ -39,20 +39,21 @@ def add(request):
     status = ''
 
     if request.POST:
-        ## Check if customerid is already in the table
+        ## Check if id is already in the table
         with connection.cursor() as cursor:
 
-            cursor.execute("SELECT * FROM customers WHERE customerid = %s", [request.POST['customerid']])
-            customer = cursor.fetchone()
-            ## No customer with same id
-            if customer == None:
+            cursor.execute("SELECT * FROM Catalog WHERE ID_account = %s", [request.POST['ID_account']])
+            listing = cursor.fetchone()
+            ## No account with same id
+            if listing == None:
                 ##TODO: date validation
-                cursor.execute("INSERT INTO customers VALUES (%s, %s, %s, %s, %s, %s, %s)"
-                        , [request.POST['first_name'], request.POST['last_name'], request.POST['email'],
-                           request.POST['dob'] , request.POST['since'], request.POST['customerid'], request.POST['country'] ])
+                cursor.execute("INSERT INTO Catalog VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                        , [request.POST['ID_place'], request.POST['ID_account'], request.POST['title'], request.POST['rating'], 
+                           request.POST['country'], request.POST['city'], request.POST['price_per_night'], 
+                           request.POST['type'], request.POST['address'], request.POST['guests'], request.POST['bedrooms']])
                 return redirect('index')    
             else:
-                status = 'Customer with ID %s already exists' % (request.POST['customerid'])
+                status = 'Listing with ID %s already exists' % (request.POST['ID_account'])
 
 
     context['status'] = status
@@ -69,7 +70,7 @@ def edit(request, id):
 
     # fetch the object related to passed id
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM customers WHERE customerid = %s", [id])
+        cursor.execute("SELECT * FROM Catalog WHERE ID_account = %s", [id])
         obj = cursor.fetchone()
 
     status = ''
@@ -78,11 +79,13 @@ def edit(request, id):
     if request.POST:
         ##TODO: date validation
         with connection.cursor() as cursor:
-            cursor.execute("UPDATE customers SET first_name = %s, last_name = %s, email = %s, dob = %s, since = %s, country = %s WHERE customerid = %s"
-                    , [request.POST['first_name'], request.POST['last_name'], request.POST['email'],
-                        request.POST['dob'] , request.POST['since'], request.POST['country'], id ])
-            status = 'Customer edited successfully!'
-            cursor.execute("SELECT * FROM customers WHERE customerid = %s", [id])
+            cursor.execute("UPDATE Catalog SET ID_place = %s, ID_account = %s, title = %s, rating = %s, country = %s, \
+                         city = %s, price_per_night = %s, type = %s, address = %s, guests = %s, bedrooms = %s WHERE id = %s"
+                    , [request.POST['ID_place'], request.POST['ID_account'], request.POST['title'], request.POST['rating'], 
+                        request.POST['country'], request.POST['city'], request.POST['price_per_night'], 
+                        request.POST['type'], request.POST['address'], request.POST['guests'], request.POST['bedrooms'], id ])
+            status = 'Listing edited successfully!'
+            cursor.execute("SELECT * FROM Catalog WHERE ID_account = %s", [id])
             obj = cursor.fetchone()
 
 
