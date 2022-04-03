@@ -1,12 +1,12 @@
 create table Account (
-	ID INT,
-	name VARCHAR(50),
-	email VARCHAR(50),
-	gender VARCHAR(50),
-	country VARCHAR(50),
-	date of birth DATE,
-	number VARCHAR(50),
-	is_host VARCHAR(50)
+	ID INT PRIMARY KEY,
+	name VARCHAR(50) NOT NULL,
+	email VARCHAR(50) UNIQUE NOT NULL,
+	gender VARCHAR(50) NOT NULL,
+	country VARCHAR(50) NOT NULL,
+	date of birth DATE NOT NULL,
+	number VARCHAR(50) NOT NULL,
+	is_host VARCHAR(50) NOT NULL
 );
 insert into Account (ID, name, email, gender, country, date of birth, number, is_host) values (1, 'Lesly Yoell', 'lyoell0@redcross.org', 'Female', 'Afghanistan', '11/09/1954', '2691557563', true);
 insert into Account (ID, name, email, gender, country, date of birth, number, is_host) values (2, 'Way Banbrook', 'wbanbrook1@plala.or.jp', 'Male', 'Afghanistan', '04/10/1935', '8502761776', true);
