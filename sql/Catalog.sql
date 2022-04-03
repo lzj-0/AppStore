@@ -1,22 +1,22 @@
 create table Catalog (
-	ID VARCHAR(50),
-	title VARCHAR(50),
-	rating DECIMAL(3,1),
-	country VARCHAR(50),
-	city VARCHAR(50),
-	price_per_night INT,
-	type VARCHAR(11),
-	address VARCHAR(50),
-	guests INT,
-	bedrooms INT
+	ID VARCHAR(50) REFERENCES Account(ID),
+	title VARCHAR(50) NOT NULL,
+	rating DECIMAL(3,1) NOT NULL,
+	country VARCHAR(50) NOT NULL,
+	city VARCHAR(50) NOT NULL,
+	price_per_night INT NOT NULL,
+	type VARCHAR(11) CHECK (type IN ('House', 'Apartment', 'Condominium')),
+	address VARCHAR(50) NOT NULL,
+	guests INT NOT NULL,
+	bedrooms INT NOT NULL
 );
-insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (26, '', 10.0, 'Morocco', 'Taourirt', 68, 'Apartment', '32986 Nelson Crossing', 4, 6);
-insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (37, '', 9.6, 'China', 'Wafang', 462, 'Apartment', '343 Marcy Court', 4, 6);
-insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (44, '', 7.8, 'Indonesia', 'Wringinputih', 423, 'Apartment', '1321 Stuart Way', 6, 2);
-insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (51, '', 2.6, 'Indonesia', 'Nanggorak', 410, 'House', '43547 Old Shore Park', 3, 6);
-insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (73, '', 5.7, 'Paraguay', 'Itacurubí del Rosario', 123, 'Condominium', '32807 Arrowood Alley', 1, 5);
-insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (83, '', 6.6, 'Serbia', 'Kladovo', 274, 'Condominium', '59 Spaight Alley', 1, 4);
-insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (88, '', 1.1, 'Colombia', 'Galán', 288, 'Apartment', '841 Cardinal Plaza', 1, 3);
-insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (89, '', 5.5, 'Canada', 'Sherbrooke', 412, 'Apartment', '307 Sugar Terrace', 1, 4);
-insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (96, '', 6.4, 'Norway', 'Fauske', 317, 'House', '3 Crownhardt Park', 1, 4);
-insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (100, '', 3.4, 'Indonesia', 'Pandansari', 465, 'Condominium', '36662 Mccormick Pass', 5, 6);
+insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (26, 'Super Host Apartment', 10.0, 'Morocco', 'Rabat', 68, 'Apartment', '32986 Nelson Crossing', 4, 6);
+insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (37, 'Homestay at Shang Hai', 9.6, 'China', 'Shang Hai', 462, 'Apartment', '343 Marcy Court', 4, 6);
+insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (44, 'Apartment away from town', 7.8, 'Indonesia', 'Bali', 423, 'Apartment', '1321 Stuart Way', 6, 2);
+insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (51, 'Premium Single Room with services', 2.6, 'Indonesia', 'Yogyakarta', 410, 'House', '43547 Old Shore Park', 3, 1);
+insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (73, 'Large,  clean & comfy, easy to city', 5.7, 'Paraguay', 'Asunción', 123, 'Condominium', '32807 Arrowood Alley', 1, 5);
+insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (83, 'Central Condo, reasonable price', 6.6, 'Serbia', 'Belgrade', 274, 'Condominium', '59 Spaight Alley', 1, 4);
+insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (88, 'Simple Private Room for Two', 1.1, 'Colombia', 'Cali', 288, 'Apartment', '841 Cardinal Plaza', 2, 1);
+insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (89, 'Walking Distance to MRT', 5.5, 'Canada', 'Toronto', 412, 'Apartment', '307 Sugar Terrace', 1, 4);
+insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (96, 'Balcony room for 2', 6.4, 'Norway', 'Oslo', 317, 'House', '3 Crownhardt Park', 2, 1);
+insert into Catalog (ID, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values (100, 'Affordable Common Room in City', 3.4, 'Indonesia', 'Jarkata', 150, 'Condominium', '36662 Mccormick Pass', 5, 6);
