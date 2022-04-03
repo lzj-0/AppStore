@@ -1,13 +1,13 @@
 create table Amenities (
 	ID VARCHAR(50) PRIMARY KEY,
-	kitchen VARCHAR(3) NOT NULL,
-	parking VARCHAR(3) NOT NULL,
-	wifi VARCHAR(3) NOT NULL,
-	smoking_allowed VARCHAR(3) NOT NULL,
-	pets_allowed VARCHAR(3) NOT NULL,
-	air_conditioning VARCHAR(3) NOT NULL,
-	TV VARCHAR(3) NOT NULL,
-	washing_machine VARCHAR(3) NOT NULL,
+	kitchen VARCHAR(3) NOT NULL CHECK (kitchen IN ('Yes', 'No')),
+	parking VARCHAR(3) NOT NULL CHECK (parking IN ('Yes', 'No')),
+	wifi VARCHAR(3) NOT NULL CHECK (wifi IN ('Yes', 'No')),
+	smoking_allowed VARCHAR(3) NOT NULL CHECK (smoking_allowed IN ('Yes', 'No')),
+	pets_allowed VARCHAR(3) NOT NULL CHECK (pets_allowed IN ('Yes', 'No')),
+	air_conditioning VARCHAR(3) NOT NULL CHECK (air_conditioning IN ('Yes', 'No')),
+	TV VARCHAR(3) NOT NULL CHECK (TV IN ('Yes', 'No')),
+	washing_machine VARCHAR(3) NOT NULL CHECK (washing_machine IN ('Yes', 'No')),
 	FOREIGN KEY ID REFERENCES Catalog(ID_place)
 );
 insert into Amenities (kitchen, parking, wifi, smoking_allowed, pets_allowed, air_conditioning, TV, washing_machine) values ('0001', 'Yes', 'No', 'No', 'Yes', 'No', 'No', 'No', 'Yes');
