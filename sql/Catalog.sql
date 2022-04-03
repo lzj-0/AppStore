@@ -1,6 +1,6 @@
 create table Catalog (
 	ID_place VARCHAR(50) PRIMARY KEY,
-	ID_account VARCHAR(50) REFERENCES Account(ID),
+	ID_account INT REFERENCES Account(ID),
 	title VARCHAR(50) NOT NULL,
 	rating DECIMAL(3,1) NOT NULL CHECK (rating BETWEEN 0 AND 10),
 	country VARCHAR(50) NOT NULL,
