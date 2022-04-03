@@ -13,14 +13,24 @@
         Place ID<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="id" maxlength="16" class="textinput textInput" required="" id="id_id"> </div> </div> <div id="div_id_neighborhood" class="control-group"> <label for="id_neighborhood" class="control-label requiredField">
         Account ID<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="accountid" maxlength="16" class="textinput textInput" required="" id="id_accountid"> </div> </div> <div id="div_id_room_name" class="control-group"> <label for="id_room_name" class="control-label requiredField">
         Title<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="room_name" maxlength="64" class="textinput textInput" required="" id="id_room_name"> </div> </div> <div id="div_id_id" class="control-group"> <label for="id_id" class="control-label requiredField">
-        Country<span class="asteriskField">*</span> </label> <select id="country" name="country">
+        Country<span class="asteriskField">*</span> </label>
     <script src="assets/js/geodatasource-cr.min.js"></script>
     <link rel="gettext" type="application/x-po" href="languages/en/LC_MESSAGES/en.po" />
-    <script type="text/javascript" src="assets/js/Gettext.js"></script> <div>
+    <script type="text/javascript" src="assets/js/Gettext.js"></script>   <body>
+
+    <div>
         Country: <select class="gds-cr" country-data-region-id="gds-cr-one" data-language="en"></select>
 
         Region: <select id="gds-cr-one"></select>
-    </div><br>
+    </div>
+
+    <div>
+        Country: <select class="gds-cr" country-data-region-id="gds-cr-two" data-language="en" country-data-default-value="US"></select>
+
+        Region: <select id="gds-cr-two" region-data-default-value="California"></select>
+    </div>
+
+  </body><br>
         City<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="id" maxlength="16" class="textinput textInput" required="" id="id_id"> </div> </div> <div id="div_id_neighborhood" class="control-group"> <label for="id_neighborhood" class="control-label requiredField">
         Price<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="price" maxlength="16" class="textinput textInput" required="" id="id_price"> </div> </div> 
         Type<span class="asteriskField">*</span> </label> <select name="type" id="type" required>
