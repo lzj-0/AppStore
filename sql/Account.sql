@@ -4,7 +4,7 @@ create table Account (
 	email VARCHAR(50) UNIQUE NOT NULL,
 	gender VARCHAR(50) NOT NULL,
 	country VARCHAR(50) NOT NULL,
-	date_of_birth DATE NOT NULL CHECK (date_of_birth BETWEEN 01/01/1920 AND 01/01/2004),
+	date_of_birth DATE NOT NULL CHECK (date_of_birth <= '01/01/2005'),
 	number VARCHAR(50) NOT NULL,
 	is_host VARCHAR(50) NOT NULL
 );
