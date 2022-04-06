@@ -10,7 +10,6 @@ create table Catalog (
 	address VARCHAR(50) NOT NULL,
 	guests INT NOT NULL CHECK (guests > 0),
 	bedrooms INT NOT NULL CHECK (bedrooms > 0),
-
 	kitchen VARCHAR(3) NOT NULL CHECK (kitchen IN ('Yes', 'No')),
 	parking VARCHAR(3) NOT NULL CHECK (parking IN ('Yes', 'No')),
 	wifi VARCHAR(3) NOT NULL CHECK (wifi IN ('Yes', 'No')),
