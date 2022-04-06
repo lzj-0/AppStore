@@ -1,5 +1,5 @@
 create table Catalog (
-	ID_place VARCHAR(50) UNIQUE NOT NULL,
+	ID_place VARCHAR(50) PRIMARY KEY,
 	ID_account INT REFERENCES Account(ID),
 	title VARCHAR(50) NOT NULL,
 	rating DECIMAL(3,1) CHECK (rating BETWEEN 0 AND 10),
@@ -18,8 +18,8 @@ create table Catalog (
 	pets_allowed VARCHAR(3) NOT NULL CHECK (pets_allowed IN ('Yes', 'No')),
 	air_conditioning VARCHAR(3) NOT NULL CHECK (air_conditioning IN ('Yes', 'No')),
 	TV VARCHAR(3) NOT NULL CHECK (TV IN ('Yes', 'No')),
-	washing_machine VARCHAR(3) NOT NULL CHECK (washing_machine IN ('Yes', 'No')),
-	PRIMARY KEY (ID_account, country, city, type, address
+	washing_machine VARCHAR(3) NOT NULL CHECK (washing_machine IN ('Yes', 'No'))
+
 );
 insert into Catalog (ID_place, ID_account, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values ('0001', 26, 'Super Host Apartment', 10.0, 'Morocco', 'Rabat', 68, 'Apartment', '32986 Nelson Crossing', 4, 6, 'Yes', 'No', 'No', 'Yes', 'No', 'No', 'No', 'Yes');
 insert into Catalog (ID_place, ID_account, title, rating, country, city, price_per_night, type, address, guests, bedrooms) values ('0002', 37, 'Homestay at Shang Hai', 9.6, 'China', 'Shang Hai', 462, 'Apartment', '343 Marcy Court', 4, 6, 'Yes', 'Yes', 'No', 'Yes', 'Yes', 'No', 'Yes', 'No');
