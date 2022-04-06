@@ -2,7 +2,7 @@ create table Catalog (
 	ID_place VARCHAR(50) PRIMARY KEY,
 	ID_account INT REFERENCES Account(ID),
 	title VARCHAR(50) NOT NULL,
-	rating DECIMAL(3,1) NOT NULL CHECK (rating BETWEEN 0 AND 10),
+	rating DECIMAL(3,1) CHECK (rating BETWEEN 0 AND 10),
 	country VARCHAR(50) NOT NULL,
 	city VARCHAR(50) NOT NULL,
 	price_per_night INT NOT NULL CHECK (price_per_night > 0),
