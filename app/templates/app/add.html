@@ -9,11 +9,22 @@
         <!-- Security token by Django -->
         {% csrf_token %}
         <!-- form -->
-        <div id="div_id_accountid" class="control-group"> <label for="id_accountid" class="control-label requiredField">
-        Place ID<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="id" maxlength="16" class="textinput textInput" required="" id="id_id"> </div> </div> <div id="div_id_neighborhood" class="control-group"> <label for="id_neighborhood" class="control-label requiredField">
-        Account ID<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="accountid" maxlength="16" class="textinput textInput" required="" id="id_accountid"> </div> </div> <div id="div_id_room_name" class="control-group"> <label for="id_room_name" class="control-label requiredField">
-        Title<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="room_name" maxlength="64" class="textinput textInput" required="" id="id_room_name"> </div> </div> <div id="div_id_id" class="control-group"> <label for="id_id" class="control-label requiredField">
+        <div id="div_id_ID_place" class="control-group"> <label for="id_ID_place" class="control-label requiredField">
+        Place ID<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="ID_place" maxlength="16" class="textinput textInput" required="" id="id_ID_place"> </div> </div> 
+        
+        <div id="div_id_ID_account" class="control-group"> <label for="id_ID_account" class="control-label requiredField">
+        Account ID<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="ID_account" maxlength="16" class="textinput textInput" required="" id="id_ID_account"> </div> </div> 
+        
+        <div id="div_id_title" class="control-group"> <label for="id_title" class="control-label requiredField">
+        Title<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="title" maxlength="64" class="textinput textInput" required="" id="id_title"> </div> </div> 
+        
+        <div id="div_id_rating" class="control-group"> <label for="id_rating" class="control-label requiredField">
+        Rating<span class="asteriskField">*</span> </label> <div class="controls"> <input type="number" name="rating" min="0" max="10" class="textinput textInput" required="" id="id_rating"> </div> </div> 
+        
+        <div id="div_id_country" class="control-group"> <label for="id_country" class="control-label requiredField">
         Country:<span class="asteriskField">*</span> </label> <select id="country" name="country" required>
+        <input list="country">
+    <datalist id="country">
     <option>select country</option>
     <option value="AF">Afghanistan</option>
     <option value="AX">Aland Islands</option>
@@ -267,49 +278,76 @@
     <option value="YE">Yemen</option>
     <option value="ZM">Zambia</option>
     <option value="ZW">Zimbabwe</option>
-</select> <br>
-        City<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="id" maxlength="16" class="textinput textInput" required="" id="id_id"> </div> </div> <div id="div_id_neighborhood" class="control-group"> <label for="id_neighborhood" class="control-label requiredField">
-        Price ($USD) <span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="price" maxlength="16" class="textinput textInput" required="" id="id_price"> </div> </div> 
+</datalist> </select> <br>
+            
+        <div id="div_id_city" class="control-group"> <label for="id_city" class="control-label requiredField">
+        City<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="city" maxlength="16" class="textinput textInput" required="" id="id_city"> </div> </div> 
+        
+        <div id="div_id_price_per_night" class="control-group"> <label for="id_price_per_night" class="control-label requiredField">
+        Price ($USD) <span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="price_per_night" maxlength="16" class="textinput textInput" required="" id="id_price_per_night"> </div> </div> 
+        
+        <div id="div_id_type" class="control-group"> <label for="id_type" class="control-label requiredField">
         Type:<span class="asteriskField">*</span> </label> <select name="type" id="type" required>
   <option value="House">House</option>
   <option value="Apartment">Apartment</option>
   <option value="Condiminium">Condominium</option>
   </select> <br>
-        Address<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="id" maxlength="16" class="textinput textInput" required="" id="id_id"> </div> </div> <div id="div_id_neighborhood" class="control-group"> <label for="id_neighborhood" class="control-label requiredField">
-        Number of Guests Allowed<span class="asteriskField">*</span> </label> <input type="number" id="nguest" name="nguest" min="1" max="25" required> <br>
-        Number of Bedrooms Available<span class="asteriskField">*</span> </label> <input type="number" id="nbedroom" name="nbedroom" min="1" max="20" required> <br>
-        Kitchen:<span class="asteriskField">*</span> </label> <select name="Kitchen" id="Kitchen" required>
+        <div id="div_id_type" class="control-group"> <label for="id_type" class="control-label requiredField">
+        Address<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="id" maxlength="16" class="textinput textInput" required="" id="id_id"> </div> </div> 
+        
+        <div id="div_id_guests" class="control-group"> <label for="id_guests" class="control-label requiredField">
+        Number of Guests Allowed<span class="asteriskField">*</span> <input type="number" id="guests" name="guests" min="1" max="25" required> </label> </div> <br>
+        
+        <div id="div_id_bedrooms" class="control-group"> <label for="id_bedrooms" class="control-label requiredField">
+        Number of Bedrooms Available<span class="asteriskField">*</span> </label> <input type="number" id="bedrooms" name="bedrooms" min="1" max="20" required> </label> </div> <br>
+        
+        <div id="div_id_kitchen" class="control-group"> <label for="id_kitchen" class="control-label requiredField">
+        Kitchen:<span class="asteriskField">*</span> </label> <select name="kitchen" id="kitchen" required>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
-  </select> <br>
-        Parking:<span class="asteriskField">*</span> </label> <select name="Parking" id="Parking" required>
+         </select> </label> </div> <br>
+            
+        <div id="div_id_parking" class="control-group"> <label for="id_bedrooms" class="control-label requiredField">
+        Parking:<span class="asteriskField">*</span> </label> <select name="parking" id="parking" required>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
-  </select> <br>
-        Wifi:<span class="asteriskField">*</span> </label> <select name="Wifi" id="Wifi" required>
+  </select>  </label> </div> <br>
+            
+        <div id="div_id_wifi" class="control-group"> <label for="id_wifi" class="control-label requiredField">
+        Wifi:<span class="asteriskField">*</span> </label> <select name="wifi" id="wifi" required>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
-  </select> <br>
-        Smoking Allowed:<span class="asteriskField">*</span> </label> <select name="Smoking allowed" id="Smoking allowed" required>
+  </select> </label> </div>  <br>
+            
+        <div id="div_id_smoking_allowed" class="control-group"> <label for="id_smoking_allowed" class="control-label requiredField">
+        Smoking Allowed:<span class="asteriskField">*</span> </label> <select name="smoking_allowed" id="smoking_allowed" required>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
-  </select> <br>
-        Pets Allowed:<span class="asteriskField">*</span> </label> <select name="Pets Allowed" id="Pets Allowed" required>
+  </select> </label> </div>  <br>
+            
+        <div id="div_id_pets_allowed" class="control-group"> <label for="id_pets_allowed" class="control-label requiredField">
+        Pets Allowed:<span class="asteriskField">*</span> </label> <select name="pets_allowed" id="pets_allowed" required>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
-  </select> <br>
-        Air-conditioning:<span class="asteriskField">*</span> </label> <select name="Aircon" id="Aircon" required>
+  </select>  </label> </div> <br>
+         
+        <div id="div_id_air_conditioning" class="control-group"> <label for="id_air_conditioning" class="control-label requiredField">
+        Air-conditioning:<span class="asteriskField">*</span> </label> <select name="air_conditioning" id="air_conditioning" required>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
-  </select> <br>
+  </select> </label> </div>  <br>
+         
+        <div id="div_id_TV" class="control-group"> <label for="id_TV" class="control-label requiredField">
         TV:<span class="asteriskField">*</span> </label> <select name="TV" id="TV" required>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
-  </select> <br>
-        Washing Machine:<span class="asteriskField">*</span> </label> <select name="Washing Machine" id="Washing Machine" required>
+  </select> </label> </div>  <br>
+            
+        <div id="div_id_washing_machine" class="control-group"> <label for="id_washing_machine" class="control-label requiredField">
+        Washing Machine:<span class="asteriskField">*</span> </label> <select name="washing_machine" id="washing_machine" required>
   <option value="Yes">Yes</option>
   <option value="No">No</option>
-  </select> <br>
+  </select> </label> </div> <br>
         <br>
         <button type="submit" value="Add">Add</button>
     </form>
