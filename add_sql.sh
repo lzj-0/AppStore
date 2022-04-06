@@ -30,6 +30,5 @@ URI="postgres://$DB_USER:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_NAME"
 # Run the scripts to insert data.
 psql ${URI} -f sql/Account.sql
 psql ${URI} -f sql/Catalog.sql
-psql ${URI} -f sql/Amenities.sql
 psql ${URI} -f sql/Reservation.sql
 
