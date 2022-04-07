@@ -15,7 +15,7 @@ def index(request):
 
     ## Use raw query to get all objects
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM Catalog ORDER BY ID_place")
+        cursor.execute("SELECT * FROM Catalog ORDER BY ID_account")
         listings = cursor.fetchall()
 
     result_dict = {'records': listings}
