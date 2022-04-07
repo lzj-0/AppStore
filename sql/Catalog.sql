@@ -1,5 +1,5 @@
 create table Catalog (
-	ID_place BIGSERIAL UNIQUE NOT NULL,
+	ID_place BIGSERIAL PRIMARY KEY,
 	ID_account INT REFERENCES Account(ID),
 	title VARCHAR(50) NOT NULL,
 	rating DECIMAL(3,1) CHECK (rating BETWEEN 0 AND 10),
@@ -18,7 +18,7 @@ create table Catalog (
 	air_conditioning VARCHAR(3) NOT NULL CHECK (air_conditioning IN ('Yes', 'No')),
 	TV VARCHAR(3) NOT NULL CHECK (TV IN ('Yes', 'No')),
 	washing_machine VARCHAR(3) NOT NULL CHECK (washing_machine IN ('Yes', 'No')),
-	PRIMARY KEY (ID_account, country, city, type, address, guests, bedrooms)
+	UNIQUE (ID_account, country, city, type, address, guests, bedrooms)
 
 );
 insert into Catalog (ID_account, title, rating, country, city, price_per_night, type, address, guests, bedrooms, kitchen, parking, wifi, smoking_allowed, pets_allowed, air_conditioning, TV, washing_machine) values (26, 'Super Host Apartment', 10.0, 'Morocco', 'Rabat', 68, 'Apartment', '32986 Nelson Crossing', 4, 6, 'Yes', 'No', 'No', 'Yes', 'No', 'No', 'No', 'Yes');
