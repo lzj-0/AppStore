@@ -55,7 +55,7 @@ def add(request):
                               request.POST['TV'], request.POST['washing_machine']])
                 return redirect('index')    
             else:
-                status = 'Listing of account %s with address %s already exists' % ([request.POST['ID_account'], request.POST['address']])
+                status = 'Listing of account %s with address %s already exists' % (request.POST['ID_account'], request.POST['address'])
 
 
     context['status'] = status
