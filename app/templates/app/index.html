@@ -14,9 +14,6 @@
             <th>City</th>
             <th>Price</th>
             <th>Type</th>
-            <th>Address</th>
-            <th>Guests</th>
-            <th>Bedrooms</th>
         </thead>
         {% for cust in records %}
         <tr>
@@ -27,9 +24,7 @@
             <td> {{ cust.5 }} </td>
             <td> {{ cust.6 }} </td>
             <td> {{ cust.7 }} </td>
-            <td> {{ cust.8 }} </td>
-            <td> {{ cust.9 }} </td>
-            <td> {{ cust.10 }} </td>
+
             <td>
                 <a href="view/{{cust.1}}"><button>View</button></a> | 
                 <a href="edit/{{cust.1}}"><button>Edit</button></a>
