@@ -1,5 +1,5 @@
 create table Reservation (
-	ID_place NUMERIC REFERENCES Catalog(ID_place),
+	ID_place BIGINT REFERENCES Catalog(ID_place),
 	ID_guest INT REFERENCES Account(ID),
 	number_of_guests INT NOT NULL,
 	checkin_date DATE NOT NULL CHECK (checkin_date > '2022-04-03'),
