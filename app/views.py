@@ -9,7 +9,7 @@ def index(request):
     if request.POST:
         if request.POST['action'] == 'delete':
             with connection.cursor() as cursor:
-                cursor.execute("DELETE FROM Catalog WHERE ID_account = %s", [request.POST['ID_account']])
+                cursor.execute("DELETE FROM Catalog WHERE ID_place = %s", [request.POST['ID_place']])
 
     ## Use raw query to get all objects
     with connection.cursor() as cursor:
