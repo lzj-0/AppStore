@@ -26,7 +26,7 @@ def view(request, id):
     
     ## Use raw query to get a listing
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM Catalog WHERE ID_account = %s", [id])
+        cursor.execute("SELECT * FROM Catalog WHERE ID_place = %s", [id])
         listing = cursor.fetchone()
     result_dict = {'cust': listing}
 
