@@ -47,7 +47,7 @@ def add(request):
             ## No account with same id
             if listing == None:
                 ##TODO: date validation
-                cursor.execute("INSERT INTO Catalog VALUES (%s, %s, NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                cursor.execute("INSERT INTO Catalog (ID_account, title, rating, country, city, price_per_night, type, address, guests, bedrooms, kitchen, parking, wifi, smoking_allowed, pets_allowed, air_conditioning, TV, washing_machine) VALUES (%s, %s, NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
                         , [request.POST['ID_account'], request.POST['title'],
                            request.POST['country'], request.POST['city'], request.POST['price_per_night'], 
                            request.POST['type'], request.POST['address'], request.POST['guests'], request.POST['bedrooms'], request.POST['kitchen'],
