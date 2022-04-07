@@ -43,12 +43,11 @@ def add(request):
         with connection.cursor() as cursor:
 
             cursor.execute("SELECT * FROM Catalog WHERE ID_account = %s", [request.POST['ID_account']])
-            x = cursor.execute("SELECT COUNT(*) FROM Catalog")
             listing = cursor.fetchone()
             ## No account with same id
             if listing == None:
                 ##TODO: date validation
-                cursor.execute("INSERT INTO Catalog VALUES (x + 1, %s, %s, NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                cursor.execute("INSERT INTO Catalog VALUES (%s, %s, NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
                         , request.POST['ID_account'], request.POST['title'],
                            request.POST['country'], request.POST['city'], request.POST['price_per_night'], 
                            request.POST['type'], request.POST['address'], request.POST['guests'], request.POST['bedrooms'], request.POST['kitchen'],
