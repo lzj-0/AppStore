@@ -15,7 +15,7 @@
         Title<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="title" value="{{obj.2}}" maxlength="64" class="textinput textInput" required="" id="id_title"> </div> </div> 
         
         <div id="div_id_country" class="control-group"> <label for="id_country" class="control-label requiredField">
-        Country:<span class="asteriskField">*</span> </label> <select id="country" name="country" required>
+        Country:<span class="asteriskField">*</span> </label> <select id="country" value="{{obj.4}}" name="country" required>
     <datalist id="country">
    <option value="Afganistan">Afghanistan</option>
    <option value="Albania">Albania</option>
@@ -266,26 +266,26 @@
 </datalist> </select> <br>
             
         <div id="div_id_city" class="control-group"> <label for="id_city" class="control-label requiredField">
-        City<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="city" maxlength="16" class="textinput textInput" required="" id="id_city"> </div> </div> 
+        City<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="city" value="{{obj.5}}" maxlength="16" class="textinput textInput" required="" id="id_city"> </div> </div> 
         
         <div id="div_id_price_per_night" class="control-group"> <label for="id_price_per_night" class="control-label requiredField">
-        Price ($USD) <span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="price_per_night" maxlength="16" class="textinput textInput" required="" id="id_price_per_night"> </div> </div> 
+        Price ($USD) <span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" value="{{obj.6}}" name="price_per_night" maxlength="16" class="textinput textInput" required="" id="id_price_per_night"> </div> </div> 
         
         <div id="div_id_type" class="control-group"> <label for="id_type" class="control-label requiredField">
-        Type:<span class="asteriskField">*</span> </label> <select name="type" id="type" required>
+        Type:<span class="asteriskField">*</span> </label> <select name="type" value="{{obj.7}}" id="type" required>
   <option value="House">House</option>
   <option value="Apartment">Apartment</option>
   <option value="Condiminium">Condominium</option>
             </select></div><br>
             
         <div id="div_id_address" class="control-group"> <label for="id_address" class="control-label requiredField">
-        Address<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="address" maxlength="16" class="textinput textInput" required="" id="id_address"> </div> </div> 
+        Address<span class="asteriskField">*</span> </label> <div class="controls"> <input type="text" name="address" value="{{obj.8}}" maxlength="16" class="textinput textInput" required="" id="id_address"> </div> </div> 
         
         <div id="div_id_guests" class="control-group"> <label for="id_guests" class="control-label requiredField">
-        Number of Guests Allowed<span class="asteriskField">*</span> <input type="number" id="guests" name="guests" min="1" max="25" required> </label> </div> <br>
+        Number of Guests Allowed<span class="asteriskField">*</span> <input type="number" id="guests" name="guests" value="{{obj.9}}" min="1" max="25" required> </label> </div> <br>
         
         <div id="div_id_bedrooms" class="control-group"> <label for="id_bedrooms" class="control-label requiredField">
-        Number of Bedrooms Available<span class="asteriskField">*</span> </label> <input type="number" id="bedrooms" name="bedrooms" min="1" max="20" required> </label> </div> <br>
+        Number of Bedrooms Available<span class="asteriskField">*</span> </label> <input type="number" id="bedrooms" name="bedrooms" value="{{obj.10}}" min="1" max="20" required> </label> </div> <br>
         
         <div id="div_id_kitchen" class="control-group"> <label for="id_kitchen" class="control-label requiredField">
         Kitchen:<span class="asteriskField">*</span> </label> <select name="kitchen" id="kitchen" required>
