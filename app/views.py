@@ -49,7 +49,7 @@ def add(request):
             if listing == None:
                 ##TODO: date validation
                 cursor.execute("INSERT INTO Catalog VALUES (x + 1, %s, %s, NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-                        , request.POST['ID_place'], request.POST['ID_account'], request.POST['title'],
+                        , request.POST['ID_account'], request.POST['title'],
                            request.POST['country'], request.POST['city'], request.POST['price_per_night'], 
                            request.POST['type'], request.POST['address'], request.POST['guests'], request.POST['bedrooms'], request.POST['kitchen'],
                               request.POST['parking'], request.POST['wifi'], request.POST['smoking_allowed'], request.POST['pets_allowed'], request.POST['air_conditioning'],
