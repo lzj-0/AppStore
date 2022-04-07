@@ -33,7 +33,7 @@
                 <form method="POST" style="display: inline;">
                 {% csrf_token %}
                 <input type="hidden" name="ID_place" value="{{cust.0}}"/>
-                <button onclick="return confirm('Are you sure you want to delete {{cust.0}}?');" type="submit" name="action" value="delete">Delete</button> 
+                <button onclick="return confirm('Are you sure you want to delete {{cust.0}}? Accomodations with existing bookings cannot be deleted.');" type="submit" name="action" value="delete">Delete</button> 
               </form></td>
         </tr>
         {% endfor %}
