@@ -74,7 +74,7 @@ def edit(request, id):
 
     # fetch the object related to passed id
     with connection.cursor() as cursor:
-        cursor.execute("SELECT * FROM Catalog WHERE ID_account = %s", [id])
+        cursor.execute("SELECT * FROM Catalog WHERE ID_place = %s", [id])
         obj = cursor.fetchone()
 
     status = ''
@@ -83,13 +83,14 @@ def edit(request, id):
     if request.POST:
         ##TODO: date validation
         with connection.cursor() as cursor:
-            cursor.execute("UPDATE Catalog SET ID_place = %s, ID_account = %s, title = %s, rating = %s, country = %s, \
-                         city = %s, price_per_night = %s, type = %s, address = %s, guests = %s, bedrooms = %s WHERE id = %s"
-                    , [request.POST['ID_place'], request.POST['ID_account'], request.POST['title'], request.POST['rating'], 
-                        request.POST['country'], request.POST['city'], request.POST['price_per_night'], 
-                        request.POST['type'], request.POST['address'], request.POST['guests'], request.POST['bedrooms'], id ])
+            cursor.execute("UPDATE Catalog SET title = %s, country = %s, \
+                         city = %s, price_per_night = %s, type = %s, address = %s, guests = %s, bedrooms = %s , kitchen = %s, parking = %s, wifi = %s \
+                          , smoking_allowed = %s, pets_allowed = %s, air_conditioning = %s, TV = %s, washing_machine = %s WHERE ID_place = %s"
+                    , [request.POST['title'], request.POST['country'], request.POST['city'], request.POST['price_per_night'], 
+                        request.POST['type'], request.POST['address'], request.POST['guests'], request.POST['bedrooms'], request.POST['kitchen'], request.POST['parking']
+                       , request.POST['wifi'], request.POST['smoking_allowed'], request.POST['pets_allowed'], request.POST['air_conditioning'], request.POST['TV'], request.POST['washing_machine'], id ])
             status = 'Listing edited successfully!'
-            cursor.execute("SELECT * FROM Catalog WHERE ID_account = %s", [id])
+            cursor.execute("SELECT * FROM Catalog WHERE ID_place = %s", [id])
             obj = cursor.fetchone()
 
 
