@@ -50,7 +50,7 @@ def add(request):
                 cursor.execute("INSERT INTO Catalog VALUES (%s, %s, %s, NULL, %s, %s, %s, %s, %s, %s, %s)"
                         , request.POST['ID_place'], request.POST['ID_account'], request.POST['title'],
                            request.POST['country'], request.POST['city'], request.POST['price_per_night'], 
-                           request.POST['type'], request.POST['address'], request.POST['guests'], request.POST['bedrooms']])
+                           request.POST['type'], request.POST['address'], request.POST['guests'], request.POST['bedrooms'])
                 return redirect('index')    
             else:
                 status = 'Listing with ID %s already exists' % (request.POST['ID_account'])
