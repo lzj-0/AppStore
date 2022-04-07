@@ -4,12 +4,24 @@ from django.db import connection
 # Create your views here.
 def index(request):
     """Shows the main page"""
-
+    context = {}
+    status = ''
+    
     ## Delete listing
     if request.POST:
         if request.POST['action'] == 'delete':
             with connection.cursor() as cursor:
                 cursor.execute("DELETE FROM Catalog WHERE ID_place = %s", [request.POST['ID_place']])
+    else:
+        status = 'Listing of account %s with address %s already exists' % (request.POST['ID_account'], request.POST['address'])
+
+
+    context['status'] = status
+ 
+    return render(request, "app/index.html", context)            
+                
+                
+                
 
     ## Use raw query to get all objects
     with connection.cursor() as cursor:
